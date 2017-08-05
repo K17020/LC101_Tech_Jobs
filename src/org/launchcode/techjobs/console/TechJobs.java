@@ -110,7 +110,20 @@ public class TechJobs {
 
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
+        // for loop through the column of jobs in columnChoices
+        System.out.println(someJobs);
 
-        System.out.println("printJobs is not implemented yet");
+        // Loops through everything in the array
+        for (int num=0;num<someJobs.size();num++){
+            System.out.println(someJobs.get(num));
+        }
     }
+
+    // Search column for term in csv file
+    public static void findByValue(String searchTerm){
+
+    }
+
 }
+
+
