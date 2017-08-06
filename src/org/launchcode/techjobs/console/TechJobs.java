@@ -114,9 +114,11 @@ public class TechJobs {
 
         // Loops through everything in the array
         for (int num = 0; num < someJobs.size(); num++) {
-            for (Map.Entry<String, String> catagories : someJobs.get(num).entrySet()) {
-                System.out.println(catagories.getKey() + ":" + catagories.getValue());
+            System.out.println("*****");
+            for (Map.Entry<String, String> categories : someJobs.get(num).entrySet()) {
+                System.out.println(categories.getKey() + ":" + categories.getValue());
             }
+            System.out.println("*****\n");
         }
     }
 }
