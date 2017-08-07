@@ -59,10 +59,12 @@ public class TechJobs {
 
                 // What is their search term?
                 System.out.println("\nSearch term: ");
-                String searchTerm = in.nextLine();
+                String searchTerm = in.nextLine().toLowerCase();
 
+                // This is where you should put the findByValue Method in
                 if (searchField.equals("all")) {
-                    System.out.println("Search all fields not yet implemented.");
+                    // Will check to see if the key and value contain the search term
+                    printJobs(JobData.findByValue(searchTerm));
                 } else {
                     printJobs(JobData.findByColumnAndValue(searchField, searchTerm));
                 }
