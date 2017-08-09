@@ -64,9 +64,9 @@ public class TechJobs {
                 // This is where you should put the findByValue Method in
                 if (searchField.equals("all")) {
                     // Will check to see if the key and value contain the search term
-                    printJobs(JobData.findByValue(searchTerm));
+                    printJobs(JobData.findByValue(searchTerm.toLowerCase()));
                 } else {
-                    printJobs(JobData.findByColumnAndValue(searchField, searchTerm));
+                    printJobs(JobData.findByColumnAndValue(searchField.toLowerCase(), searchTerm.toLowerCase()));
                 }
             }
         }

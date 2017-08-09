@@ -7,6 +7,7 @@ import org.apache.commons.csv.CSVRecord;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -76,7 +77,7 @@ public class JobData {
 
             String aValue = row.get(column);
 
-            if (aValue.contains(value)) {
+            if (aValue.toLowerCase().contains(value)) {
                 jobs.add(row);
             }
         }
@@ -127,8 +128,24 @@ public class JobData {
 
 
     // Return the values based off a specific search term that user enters
-    public static void findByValue (String searchTerm){
-        System.out.println("Hello " + searchTerm);
+    public static ArrayList<HashMap<String,String>> findByValue (String searchTerm) {
+        // Loads the CSV file to loop though
+        loadData();
+        // Holds the jobs with the search term
+        ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
+        // Loops thought all list
+        for (HashMap<String, String> row : allJobs){
+            // Loop though everything contained in the dictionary
+            for (String fields : row.values()) {
+                //if the search term is contained
+                if (fields.toLowerCase().contains(searchTerm)){
+                    jobs.add(row);
+                }
+            }
+        }
+        // Return the Array that contains jobs with thee search terms
+        return jobs;
 
     }
+
 }
