@@ -140,6 +140,7 @@ public class JobData {
                 //if the search term is contained
                 if (fields.toLowerCase().contains(searchTerm)){
                     jobs.add(row);
+                    break; // prevents duplicates from showing up in the array list
                 }
             }
         }

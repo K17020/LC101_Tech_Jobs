@@ -115,12 +115,16 @@ public class TechJobs {
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
 
         // Loops through everything in the array
-        for (int num = 0; num < someJobs.size(); num++) {
-            System.out.println("*****");
-            for (Map.Entry<String, String> categories : someJobs.get(num).entrySet()) {
-                System.out.println(categories.getKey() + ":" + categories.getValue());
+        if (someJobs.size() == 0)
+            System.out.println("There are no jobs");
+        else{
+            for (int num = 0; num < someJobs.size(); num++) {
+                System.out.println("*****");
+                for (Map.Entry<String, String> categories : someJobs.get(num).entrySet()) {
+                    System.out.println(categories.getKey() + ":" + categories.getValue());
+                }
+                System.out.println("*****\n");
             }
-            System.out.println("*****\n");
         }
     }
 }
